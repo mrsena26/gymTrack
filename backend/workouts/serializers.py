@@ -20,3 +20,11 @@ class SessionSerializer(serializers.ModelSerializer):
         model = Session
         fields = '__all__'
         
+    def validate(self,data):
+
+        if self.instance is None:
+            if Session.objects.filter(status="active").exists():
+                raise serializers.ValidationError("" \
+                    "An active session already exists."
+                )
+        return data
