@@ -9,7 +9,7 @@ class Session(models.Model):
         return f"Session {self.id} - {self.date}"
 
 class Exercise(models.Model):
-    sessions = models.ForeignKey(Session, on_delete=models.CASCADE, related_name="exercises")
+    session = models.ForeignKey(Session, on_delete=models.CASCADE, related_name="exercises")
     name = models.CharField(max_length=100)
     muscle_group = models.CharField(max_length=50)
 
