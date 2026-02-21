@@ -44,3 +44,5 @@ class ExerciseViewSet(viewsets.ModelViewSet):
 class SetViewSet(viewsets.ModelViewSet):
     queryset = Set.objects.all()
     serializer_class = SetSerializer
+
+    
